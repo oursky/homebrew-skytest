@@ -28,7 +28,7 @@ jobs:
 
       - name: Brew audit
         if: ${{ steps.version.outputs.version != '0.0.0' }}
-        run: brew audit --strict --online Formula/skytest.rb
+        run: brew audit --strict --online --formula skytest
 
       - name: Brew install
         if: ${{ steps.version.outputs.version != '0.0.0' }}
