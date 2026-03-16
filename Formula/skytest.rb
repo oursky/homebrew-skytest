@@ -20,7 +20,7 @@ class Skytest < Formula
 
   def install
     libexec.install Dir["*"]
-    system "npm", "install", *std_npm_args(prefix: libexec), "tsx@4.20.6"
+    system "npm", "install", "--prefix", libexec, *std_npm_args(prefix: false), "tsx@4.20.6"
 
     state_dir = var/"skytest"
     state_dir.mkpath
