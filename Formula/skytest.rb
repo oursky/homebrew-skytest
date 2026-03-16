@@ -1,8 +1,10 @@
 class Skytest < Formula
-  desc "SkyTest runner management CLI"
+  desc "Runner management CLI for SkyTest"
   homepage "https://github.com/oursky/skytest-agent"
   version "0.1.0"
   license "MIT"
+
+  depends_on "node"
 
   on_macos do
     on_arm do
@@ -16,11 +18,9 @@ class Skytest < Formula
     end
   end
 
-  depends_on "node"
-
   def install
     libexec.install Dir["*"]
-    system "npm", "install", "--prefix", libexec, "tsx@4.20.6"
+    system "npm", "install", *std_npm_args(prefix: libexec), "tsx@4.20.6"
 
     state_dir = var/"skytest"
     state_dir.mkpath
