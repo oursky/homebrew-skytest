@@ -1,22 +1,22 @@
 class Skytest < Formula
-  desc "SkyTest runner management CLI"
+  desc "Runner management CLI for SkyTest"
   homepage "https://github.com/oursky/skytest-agent"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
+
+  depends_on "node"
 
   on_macos do
     on_arm do
-      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.1/skytest-0.1.1-darwin-arm64.tar.gz"
-      sha256 "a80a0f9d11c0356894dc72e2d9464dc87b1e914703bcc2b62345ce16a430789a"
+      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.2/skytest-0.1.2-darwin-arm64.tar.gz"
+      sha256 "15c370d0cf63c2b98ef17265981cdb01860095cbbca6c561e492b31e973baa77"
     end
 
     on_intel do
-      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.1/skytest-0.1.1-darwin-amd64.tar.gz"
-      sha256 "6a851ecee85ef0832c095c0576e5bac6f15aa173f78f348e7e8ef2f4498a5f70"
+      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.2/skytest-0.1.2-darwin-amd64.tar.gz"
+      sha256 "452043060e3be236887e6585ace6dfc8ed9d47be1105c789defc84e5e1323eda"
     end
   end
-
-  depends_on "node"
 
   def install
     libexec.install Dir["*"]
