@@ -1,26 +1,28 @@
 class Skytest < Formula
-  desc "Runner management CLI for SkyTest"
+  desc "SkyTest runner management CLI"
   homepage "https://github.com/oursky/skytest-agent"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
-
-  depends_on "node"
 
   on_macos do
     on_arm do
-      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.0/skytest-0.1.0-darwin-arm64.tar.gz"
-      sha256 "e2d49ca06ec3d6d3e5af57b6cce599ce227c07e47af7ecddfee11130ccd852b8"
+      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.1/skytest-0.1.1-darwin-arm64.tar.gz"
+      sha256 "a80a0f9d11c0356894dc72e2d9464dc87b1e914703bcc2b62345ce16a430789a"
     end
 
     on_intel do
-      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.0/skytest-0.1.0-darwin-amd64.tar.gz"
-      sha256 "54cdb2f7732fa63d6801c69554d7cc65d360f5bb5256b279d0b29caa1687c7ab"
+      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.1/skytest-0.1.1-darwin-amd64.tar.gz"
+      sha256 "6a851ecee85ef0832c095c0576e5bac6f15aa173f78f348e7e8ef2f4498a5f70"
     end
   end
 
+  depends_on "node"
+
   def install
     libexec.install Dir["*"]
-    system "npm", "install", "--prefix", libexec, *std_npm_args(prefix: false), "tsx@4.20.6"
+    ENV["PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD"] = "1"
+    ENV["PRISMA_SKIP_POSTINSTALL_GENERATE"] = "1"
+    system "npm", "ci", "--prefix", libexec
 
     state_dir = var/"skytest"
     state_dir.mkpath
