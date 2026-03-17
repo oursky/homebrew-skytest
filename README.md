@@ -2,11 +2,78 @@
 
 Homebrew tap for the `skytest` CLI.
 
-## Install
+## Clean Install (Recommended)
+
+Use this when installing for the first time, or when your tap may have stale local state.
+
+1. Remove any existing install and tap:
+
+```bash
+brew uninstall skytest || true
+brew untap oursky/skytest || true
+```
+
+2. Add the official tap:
 
 ```bash
 brew tap oursky/skytest
-brew install skytest
+```
+
+3. Install `skytest`:
+
+```bash
+brew install oursky/skytest/skytest
+```
+
+4. Verify the installed version:
+
+```bash
+skytest version
+```
+
+## Upgrade
+
+1. Refresh Homebrew metadata:
+
+```bash
+brew update
+```
+
+2. Upgrade `skytest`:
+
+```bash
+brew upgrade oursky/skytest/skytest
+```
+
+3. Verify the upgraded version:
+
+```bash
+skytest version
+```
+
+## Uninstall
+
+1. Uninstall `skytest`:
+
+```bash
+brew uninstall skytest
+```
+
+2. Optional: remove the tap if you no longer need it:
+
+```bash
+brew untap oursky/skytest
+```
+
+## Reset a Stale Tap
+
+If `brew` still installs an old version, run:
+
+```bash
+brew untap oursky/skytest
+brew tap oursky/skytest
+brew update
+brew reinstall oursky/skytest/skytest
 skytest version
 ```
 
