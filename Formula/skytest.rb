@@ -1,20 +1,20 @@
 class Skytest < Formula
   desc "Runner management CLI for SkyTest"
   homepage "https://github.com/oursky/skytest-agent"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   depends_on "node"
 
   on_macos do
     on_arm do
-      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.2/skytest-0.1.2-darwin-arm64.tar.gz"
-      sha256 "15c370d0cf63c2b98ef17265981cdb01860095cbbca6c561e492b31e973baa77"
+      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.3/skytest-0.1.3-darwin-arm64.tar.gz"
+      sha256 "f9a682310f78432eb170a022f777eae6debab7665f3050977ff596d6ed1583de"
     end
 
     on_intel do
-      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.2/skytest-0.1.2-darwin-amd64.tar.gz"
-      sha256 "452043060e3be236887e6585ace6dfc8ed9d47be1105c789defc84e5e1323eda"
+      url "https://github.com/oursky/skytest-agent/releases/download/v0.1.3/skytest-0.1.3-darwin-amd64.tar.gz"
+      sha256 "5b6090bc053dfb8cbacae5e5d80fb1d0442df611ef9a9ae0563020e3191dfe7c"
     end
   end
 
