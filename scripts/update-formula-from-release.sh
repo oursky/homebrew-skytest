@@ -13,8 +13,8 @@ if [[ ! "${TAG}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
   exit 1
 fi
 
-URL="https://github.com/oursky/skytest-agent/releases/download/${TAG}/skytest.rb"
+URL="https://github.com/oursky/skytest-agent/releases/download/${TAG}/skytest-runner.rb"
 
 echo "Downloading formula from ${URL}"
-curl -fsSL "${URL}" -o "Formula/skytest.rb"
-echo "Updated Formula/skytest.rb from ${TAG}"
+curl -fsSL "${URL}" -o "Formula/skytest-runner.rb"
+echo "Updated Formula/skytest-runner.rb from ${TAG}"

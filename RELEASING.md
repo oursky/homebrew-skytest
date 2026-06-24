@@ -1,4 +1,4 @@
-# Releasing `skytest` To Homebrew Tap
+# Releasing `skytest-runner` To Homebrew Tap
 
 This tap is updated from `oursky/skytest-agent` release artifacts.
 
@@ -20,11 +20,11 @@ This tap is updated from `oursky/skytest-agent` release artifacts.
 1. In `oursky/skytest-agent`, release a SemVer tag (`vX.Y.Z`) via tag push or the workflow dispatch UI.
 2. Wait for `Release CLI` workflow success.
 3. Confirm GitHub release contains:
-   - `skytest-<version>-darwin-arm64.tar.gz`
-   - `skytest-<version>-darwin-amd64.tar.gz`
+   - `skytest-runner-<version>-darwin-arm64.tar.gz`
+   - `skytest-runner-<version>-darwin-amd64.tar.gz`
    - `checksums.txt`
-   - `skytest.rb`
-4. Confirm this tap repo gets an automated commit updating `Formula/skytest.rb`.
+   - `skytest-runner.rb`
+4. Confirm this tap repo gets an automated commit updating `Formula/skytest-runner.rb`.
 
 ## Manual Fallback (if auto-update failed)
 
@@ -44,8 +44,8 @@ On macOS:
 ```bash
 brew tap oursky/skytest
 brew update
-brew reinstall skytest
-skytest version
+brew reinstall skytest-runner
+skytest-runner version
 ```
 
 The output version should match `X.Y.Z`.
